@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+require('./index.js')() 
+
 //routes
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
