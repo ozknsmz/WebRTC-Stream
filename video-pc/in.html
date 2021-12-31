@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"
+    />
+    <base target="_blank" />
+    <title>Open Zeka Proje</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>
+        <a href="//webrtc.github.io/samples/" title="Open Zeka Project"
+          >Open Zeka Project</a>
+      </h1>
+
+    <video id="localVideo">
+        <source src="saniye.webm" type="video/webm"/>
+        <source src="./media/saniye.mp4" type="video/mp4"/>
+    </video>
+    <video id="remoteVideo"  autoplay ></video>
+
+    <button id="connect-btn">Connect</button>
+
+</div>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="main.js" async></script>
+</body>
+</html>
