@@ -123,6 +123,7 @@ function onCreateSessionDescriptionError(error) {
   function onCreateAnswerSuccess(desc) {
    
     // peer2 setLocalDescription start
+    console.log(`Answer from peer2: ${desc.sdp}`);
     peer2.setLocalDescription(desc, () => onSetLocalSuccess(peer2), onSetSessionDescriptionError);
 
     // peer1 setRemoteDescription start
