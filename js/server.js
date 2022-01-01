@@ -24,5 +24,3 @@ io.on('connection', (socket) => {
     })
     
 })
-
-// İNDEX HTML' İ BROWSERA BASTIRDIK FAKAT JS DOSYASINI İŞLEMİYOR!
