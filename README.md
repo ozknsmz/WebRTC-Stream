@@ -10,7 +10,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a target="_blank" rel="noopener noreferrer" href="images/Swagger.png"><img src="images/Swagger.png" width="400" style="max-width:100%;"></a></td>
+<td><a target="_blank" rel="noopener noreferrer" href="media/openzeka.gif"><img src="media/openzeka.gif" width="400" style="max-width:100%;"></a></td>
 </tr>
 </tbody>
 </table>
