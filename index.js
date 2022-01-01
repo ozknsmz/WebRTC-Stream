@@ -12,6 +12,8 @@ let stream;
 let startTime;
 let peer1; // local
 let peer2; // remote
+
+//An object providing the following options requested for the offer
 const offerOptions = {
     offerToReceiveAudio: 1,
     offerToReceiveVideo: 1
@@ -20,7 +22,7 @@ const offerOptions = {
   //The CreateStream method creates and opens a stream object in this storage object.
 async function createStream(){
     if(stream){
-        return;
+        return stream;
     }
     if(localVideo.captureStream){
         //captureStream: returns a MediaStream object which is streaming a real-time capture of the content being rendered in the media element.
@@ -68,12 +70,14 @@ function call(){
     peer2 = new RTCPeerConnection(server);
     peer2.onicecandidate = e =>onIceCandidate(peer2, e);
 
+    // oniceconnectionstatechange: This happens when the state of the connection's ICE agent, as represented by the iceConnectionState property, changes.
     peer1.oniceconnectionstatechange = e => onIceStateChange(peer1, e);
     peer2.oniceconnectionstatechange = e => onIceStateChange(peer2, e);
     peer2.ontrack = receiveStream;
 
     stream.getTracks().forEach(track => peer1.addTrack(track, stream));
 
+    //createOffer : creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer
     peer1.createOffer(onCreateOfferSuccess, onCreateSessionDescriptionError, offerOptions);
 }
 
