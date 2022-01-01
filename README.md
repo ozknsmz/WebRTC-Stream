@@ -1,8 +1,9 @@
 # project-openzeka
 
-  <h3>WebRTC</h3>
+  <h2>WebRTC</h2>
   
-  <p dir="auto">Check this <a href="https://project-openzeka.vercel.app/" rel="nofollow">link</a> to see demo.</p>
+<h3>DEMO</h3>
+<p dir="auto">Check this <a href="https://project-openzeka.vercel.app/" target="_blank" rel="nofollow">link</a> to see demo.</p>
  
  <table>
 <thead>
