@@ -59,8 +59,6 @@ function call(){
 
     // starting call
     startTime = window.performance.now();
-    const videoTracks = stream.getVideoTracks();
-    const audioTracks = stream.getAudioTracks();
     
     const server = null;
     // RTCPeerConnection: represents a WebRTC connection between the local computer and a remote peer.
