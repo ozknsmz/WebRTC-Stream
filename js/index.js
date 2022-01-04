@@ -5,8 +5,11 @@ const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 const connectbtn = document.getElementById('connect-btn');
 
+
 // button click for remoteVideo stream 
+
 connectbtn.onclick = call;
+
 
 let stream;
 let startTime;
@@ -51,7 +54,7 @@ remoteVideo.onresize = () => {
 };
 
 function call(){
-
+    connectbtn.disabled = true;
     // function to run when media is ready
     localVideo.oncanplay = createStream;
     if(localVideo.readyState >=3){
@@ -73,7 +76,7 @@ function call(){
     // oniceconnectionstatechange: This happens when the state of the connection's ICE agent, as represented by the iceConnectionState property, changes.
     peer1.oniceconnectionstatechange = e => onIceStateChange(peer1, e);
     peer2.oniceconnectionstatechange = e => onIceStateChange(peer2, e);
-    peer2.ontrack = receiveStream;
+    peer2.ontrack = receiveStream;  // to get track for remote user
 
     stream.getTracks().forEach(track => peer1.addTrack(track, stream));
 
@@ -145,6 +148,7 @@ function onCreateSessionDescriptionError(error) {
   ${event.candidate ?
       event.candidate.candidate : '(null)'}`);
   }
+  
 
   // ? 
   function onIceStateChange(pc, event) {
